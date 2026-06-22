@@ -38,23 +38,23 @@ export const CaseStudies = () => {
           </motion.div>
         </div>
 
-        <div className="relative h-[550px]">
-          <motion.div className="absolute left-0 top-0 flex gap-8 px-6" style={{ x }}>
-            {caseStudies.map((study, index) => (
+        <div className="relative h-auto md:h-[550px] overflow-x-visible md:overflow-hidden">
+          <motion.div className="relative md:absolute left-0 top-0 flex flex-col md:flex-row gap-6 px-0 sm:px-6" style={{ x }}>
+            {caseStudies.map((study) => (
               <div
                 key={study.id}
-                className="w-[480px] flex-shrink-0 glass-panel rounded-3xl overflow-hidden group relative"
+                className="w-full max-w-[340px] md:w-[480px] min-w-[280px] flex-shrink-0 glass-panel rounded-3xl overflow-hidden group relative"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${study.gradient} opacity-30`} />
 
-                <div className="relative p-10">
+                <div className="relative p-6 sm:p-10">
                   <span className="text-xs font-bold tracking-[0.15em] uppercase text-primary mb-3 block">
                     {study.category}
                   </span>
                   <h3 className="text-2xl font-bold mb-4">{study.title}</h3>
                   <p className="text-text_secondary leading-relaxed mb-8">{study.description}</p>
 
-                  <div className="grid grid-cols-3 gap-6 mb-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
                     {study.metrics.map((metric, i) => {
                       const MetricIcon = metricIcons[i] || TrendingUp
                       return (

@@ -10,9 +10,9 @@ export const CTA = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/noise.png')] opacity-[0.02] pointer-events-none" />
 
       {/* Animated gradient orbs */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[150px] animate-pulse" />
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: "1s" }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[200px] animate-pulse" style={{ animationDelay: "2s" }} />
+      <div className="hidden sm:block absolute top-1/3 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-[150px] animate-pulse" />
+      <div className="hidden sm:block absolute bottom-1/3 right-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-secondary/10 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: "1s" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-[600px] sm:h-[600px] bg-accent/5 rounded-full blur-[200px] animate-pulse" style={{ animationDelay: "2s" }} />
 
       <div className="container mx-auto px-6 relative z-10 text-center">
         <motion.div
@@ -20,8 +20,7 @@ export const CTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
-        >
-          <motion.div
+        >          <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
@@ -34,17 +33,17 @@ export const CTA = () => {
             </span>
           </motion.div>
 
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
             Transform Operations.
             <br />
             <span className="text-gradient">Accelerate Growth.</span>
           </h2>
 
-          <p className="text-xl md:text-2xl text-text_secondary mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-text_secondary mb-12 max-w-2xl mx-auto leading-relaxed">
             Let&apos;s build the next generation of your digital enterprise.
           </p>
 
-          <MagneticButton className="group relative px-10 py-5 bg-primary text-background font-bold rounded-2xl overflow-hidden text-lg shadow-2xl shadow-primary/30">
+          <MagneticButton className="group relative px-8 py-4 sm:px-10 sm:py-5 bg-primary text-background font-bold rounded-2xl overflow-hidden text-base sm:text-lg shadow-2xl shadow-primary/30">
             <span className="relative z-10 flex items-center gap-3">
               Book a Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>

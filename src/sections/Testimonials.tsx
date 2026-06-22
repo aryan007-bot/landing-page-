@@ -32,7 +32,7 @@ export const Testimonials = () => {
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
-                className="w-[420px] flex-shrink-0 glass-panel rounded-3xl p-8 relative"
+                className="w-full max-w-[420px] min-w-[280px] flex-shrink-0 glass-panel rounded-3xl p-8 relative"
               >
                 <Quote className="w-8 h-8 text-primary/30 mb-6" />
                 <p className="text-text_secondary leading-relaxed mb-8 text-sm italic">

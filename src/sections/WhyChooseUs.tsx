@@ -3,7 +3,8 @@ import { motion, useMotionValue } from "framer-motion"
 import { features } from "@/constants/data"
 import { Building2, Zap, Users, Cpu, TrendingUp, Globe, ArrowRight } from "lucide-react"
 
-const iconMap: Record<string, React.ElementType> = {
+type WhyIconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>
+const iconMap: Record<string, WhyIconComponent> = {
   Building2, Zap, Users, Cpu, TrendingUp, Globe,
 }
 

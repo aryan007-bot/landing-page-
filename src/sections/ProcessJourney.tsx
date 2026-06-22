@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { processSteps } from "@/constants/data"
 import { Search, LineChart, Hammer, Rocket, Settings2, Expand, ArrowRight } from "lucide-react"
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Search, LineChart, Hammer, Rocket, Settings2, Expand,
 }
 
@@ -40,21 +40,21 @@ export const ProcessJourney = () => {
           </motion.div>
         </div>
 
-        <div className="relative h-[500px]">
-          <motion.div className="absolute left-0 top-0 flex gap-8 px-6" style={{ x }}>
+        <div className="relative h-auto md:h-[500px] overflow-x-visible md:overflow-hidden">
+          <motion.div className="relative md:absolute left-0 top-0 flex flex-col md:flex-row gap-6 px-0 sm:px-6" style={{ x }}>
             {processSteps.map((step, index) => {
               const Icon = iconMap[step.icon] || Search
 
               return (
                 <div
                   key={step.id}
-                  className="w-[400px] flex-shrink-0 glass-panel rounded-3xl p-8 relative group hover:bg-white/[0.08] transition-colors"
+                  className="w-full max-w-[420px] md:w-[400px] min-w-[280px] flex-shrink-0 glass-panel rounded-3xl p-6 sm:p-8 relative group hover:bg-white/[0.08] transition-colors"
                 >
-                  <div className="flex items-center gap-4 mb-6">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                       <Icon className="w-7 h-7 text-primary" />
                     </div>
-                    <div>
+                    <div className="text-left">
                       <span className="text-xs font-bold tracking-wider text-primary/60 text-[10px] uppercase">
                         Step {String(index + 1).padStart(2, "0")}
                       </span>

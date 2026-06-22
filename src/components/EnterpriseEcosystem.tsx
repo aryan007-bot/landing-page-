@@ -1,6 +1,6 @@
-import { useRef, useMemo, useCallback } from "react"
+import { useRef, useMemo } from "react"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
-import { Float, Sphere, MeshDistortMaterial, Points, PointMaterial, Line, Text } from "@react-three/drei"
+import { Float, Sphere, MeshDistortMaterial, Points, PointMaterial } from "@react-three/drei"
 import * as THREE from "three"
 
 const NODE_COUNT = 8
@@ -87,18 +87,16 @@ function NodeNetwork({ mouse }: { mouse: { x: number; y: number } }) {
     return (
       <group ref={lineRef}>
         {connectionPairs.map(([i, j], idx) => {
-          const points = [nodes[i].pos, nodes[j].pos]
+          const positions = new Float32Array([
+            nodes[i].pos.x, nodes[i].pos.y, nodes[i].pos.z,
+            nodes[j].pos.x, nodes[j].pos.y, nodes[j].pos.z,
+          ])
           return (
             <line key={idx}>
               <bufferGeometry>
                 <bufferAttribute
                   attach="attributes-position"
-                  count={2}
-                  array={new Float32Array([
-                    nodes[i].pos.x, nodes[i].pos.y, nodes[i].pos.z,
-                    nodes[j].pos.x, nodes[j].pos.y, nodes[j].pos.z,
-                  ])}
-                  itemSize={3}
+                  args={[positions, 3]}
                 />
               </bufferGeometry>
               <lineBasicMaterial color={nodes[i].color} transparent opacity={0.2} />

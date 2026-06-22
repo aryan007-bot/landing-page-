@@ -44,11 +44,11 @@ export const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
       <nav
         ref={navRef}
-        className={`pointer-events-auto w-[90%] max-w-7xl transition-all duration-300 relative ${
+        className={`pointer-events-auto w-full max-w-7xl px-4 sm:px-6 mx-auto transition-all duration-300 relative ${
           scrolled ? 'top-4' : 'top-8'
         }`}
       >
-        <div className="glass-panel rounded-full px-6 py-3 flex items-center justify-between">
+        <div className="glass-panel rounded-full px-4 sm:px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-primary/20">
             E

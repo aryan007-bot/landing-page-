@@ -7,7 +7,8 @@ import {
   ArrowRight,
 } from "lucide-react"
 
-const iconMap: Record<string, React.ElementType> = {
+type ServiceIconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>
+const iconMap: Record<string, ServiceIconComponent> = {
   Brain, Code2, Network, Users, KanbanSquare, HeadphonesIcon,
   Zap, MessageSquare, FileText, ClipboardList, Phone, Mail,
 }
@@ -55,7 +56,7 @@ const TiltCard = ({ service, index }: { service: typeof services[0]; index: numb
         ${service.rowSpan === 2 ? "lg:row-span-2" : ""}
       `}
     >
-      <div className="absolute inset-0" style={{ background }} />
+      <div className="absolute inset-0" style={{ background: background as unknown as string }} />
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
           background: `linear-gradient(135deg, ${service.gradient.split(" ")[1].replace("/20", "/10")}, transparent)`,

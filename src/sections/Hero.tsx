@@ -38,20 +38,20 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] mb-8 tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-8 tracking-tight"
             >
               Engineering
               <br />
               <span className="text-gradient">Digital Excellence</span>
               <br />
-              <span className="text-4xl md:text-5xl lg:text-6xl text-text_secondary/50">for Modern Enterprises</span>
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-text_secondary/50">for Modern Enterprises</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-lg md:text-xl text-text_secondary mb-10 max-w-xl leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-text_secondary mb-10 max-w-xl leading-relaxed"
             >
               We combine software engineering, intelligent automation, enterprise consulting, and business process solutions to help organizations scale faster.
             </motion.p>
@@ -60,7 +60,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="flex flex-wrap gap-6"
+              className="flex flex-col sm:flex-row flex-wrap gap-4"
             >
               <MagneticButton className="group relative px-8 py-4 bg-primary text-background font-bold rounded-xl overflow-hidden shadow-xl shadow-primary/20">
                 <span className="relative z-10 flex items-center gap-2 text-sm tracking-wide">
@@ -81,7 +81,7 @@ export const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="mt-16 flex items-center gap-8"
+              className="mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-6"
             >
               <div className="flex -space-x-4">
                 {[1, 3, 5, 8, 12].map((i) => (

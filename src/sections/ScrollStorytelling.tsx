@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -7,14 +7,14 @@ import { Code2, Brain, Network, Users, KanbanSquare, Zap, MessageSquare, ArrowRi
 
 gsap.registerPlugin(ScrollTrigger)
 
-const iconMap: Record<string, React.ElementType> = {
+type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>
+const iconMap: Record<string, IconComponent> = {
   Brain, Code2, Network, Users, KanbanSquare, Zap, MessageSquare,
 }
 
 export const ScrollStorytelling = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const section = sectionRef.current

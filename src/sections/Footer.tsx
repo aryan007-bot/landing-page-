@@ -1,5 +1,4 @@
 import { ArrowUpRight, Globe2, Mail, MapPin, Phone } from "lucide-react"
-import { MagneticButton } from "@/components/MagneticButton"
 
 const footerLinks = {
   Company: ["About Us", "Leadership", "Careers", "Press", "Partners"],
