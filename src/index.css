@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #050816;
+  --color-secondary_bg: #0F172A;
+  --color-primary: #00E5FF;
+  --color-secondary: #6D28D9;
+  --color-accent: #14F195;
+  --color-text_primary: #FFFFFF;
+  --color-text_secondary: #CBD5E1;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --animate-gradient-x: gradient-x 15s ease infinite;
+  --animate-gradient-y: gradient-y 15s ease infinite;
+  --animate-gradient-xy: gradient-xy 15s ease infinite;
+  --animate-pulse-soft: pulse-soft 4s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+}
+
+@keyframes gradient-y {
+  0%, 100% { background-size: 400% 400%; background-position: center top; }
+  50% { background-size: 200% 200%; background-position: center center; }
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-size: 200% 200%; background-position: left center; }
+  50% { background-size: 200% 200%; background-position: right center; }
+}
+
+@keyframes gradient-xy {
+  0%, 100% { background-size: 400% 400%; background-position: left center; }
+  50% { background-size: 200% 200%; background-position: right center; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@layer base {
+  :root {
+    --background: 230 35% 5%;
+    --foreground: 210 40% 98%;
+  }
+
+  html {
+    scroll-behavior: initial;
+    background-color: var(--color-background);
+    color: var(--color-text_primary);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary), var(--color-accent));
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.15) 0%, rgba(109, 40, 217, 0.1) 25%, transparent 50%);
+}
+
+canvas {
+  touch-action: none;
+}
+
+/* Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
